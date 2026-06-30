@@ -242,6 +242,37 @@ Todo matching usa `grep -qiE` com regex. Nunca busca literal.
 
 ---
 
+## PADRÃO DE AGENTES — DEVSTACK COMO COORDENADOR
+
+O devstack pode e deve spawnar subagentes para trabalho paralelo. Sempre que a tarefa tiver partes independentes, não faça sequencialmente — divida e paralelize.
+
+### Quando usar subagentes:
+- Backend + Frontend podem ser desenvolvidos em paralelo
+- Testes podem rodar enquanto documentação é escrita
+- Múltiplos arquivos independentes (config, utils, main) = subagentes simultâneos
+- Pesquisa de lib + codificação = subagentes simultâneos
+
+### Padrão de spawn:
+```
+[DEVSTACK COORDENADOR] recebe a tarefa
+  ├── Subagente 1: Backend/API → cria os endpoints
+  ├── Subagente 2: Frontend/UI → cria a interface
+  ├── Subagente 3: Testes → escreve e roda testes
+  └── Subagente 4: Docs → README + comentários
+[DEVSTACK COORDENADOR] integra, valida, entrega
+```
+
+### Integração com auto-qa e watchdog:
+- Ao terminar o desenvolvimento → acionar **auto-qa** como subagente antes de entregar
+- Se output suspeito → acionar **watchdog** para verificar se processo foi seguido
+- Se bug → acionar **debugger** com contexto completo do erro
+
+### Regra: nunca fazer sequencialmente o que pode ser paralelo
+Se demorou mais de 10 min para uma tarefa com partes independentes → deveria ter paralelizado.
+
+
+---
+
 ## ⚡ CHECKLIST OBRIGATÓRIO — ANTES DE QUALQUER ENTREGA
 
 **O agente NÃO entrega sem confirmar todos os itens abaixo:**

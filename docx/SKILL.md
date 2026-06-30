@@ -610,6 +610,33 @@ After running `comment.py` (see Step 2), add markers to document.xml. For replie
 
 ---
 
+## 🤖 PADRÃO DE AGENTES — INTEGRAÇÃO OBRIGATÓRIA
+
+Esta skill suporta e incentiva execução multi-agente paralela.
+
+### Coordenadores disponíveis (usar sempre que aplicável):
+- **devstack** → spawnar quando a tarefa envolver criação/edição de código, scripts, integrações
+- **auto-qa** → spawnar SEMPRE no final, antes de entregar qualquer output
+- **watchdog** → spawnar se output parecer incompleto, rápido demais, ou suspeito
+- **debugger** → spawnar quando encontrar erro — recebe contexto completo e resolve
+
+### Como chamar subagentes desta skill:
+```
+[SKILL COORDENADORA] executa a tarefa principal
+  ├── Subagente devstack: cria/corrige qualquer código necessário
+  ├── Subagente auto-qa: valida o output antes de entregar
+  └── Subagente watchdog: monitora se o processo foi seguido corretamente
+[SKILL COORDENADORA] integra resultados e entrega para Arthur
+```
+
+### Regras de paralelização:
+- Se a tarefa tem partes independentes → dividir em subagentes simultâneos, nunca sequencial
+- Nunca fazer em 1 agente o que 3 podem fazer ao mesmo tempo mais rápido
+- O subagente auto-qa é OBRIGATÓRIO antes de qualquer entrega final
+
+
+---
+
 ## ⚡ CHECKLIST OBRIGATÓRIO — ANTES DE QUALQUER ENTREGA
 
 **O agente NÃO entrega sem confirmar todos os itens abaixo:**

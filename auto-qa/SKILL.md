@@ -152,6 +152,37 @@ Todo matching de termos usa `grep -qiE` com regex. Nunca busca literal.
 
 ---
 
+## AUTO-QA COMO SUBAGENTE COORDENADOR
+
+O auto-qa pode ser chamado por qualquer outra skill/agente como subagente de validação:
+
+### Como outras skills chamam o auto-qa:
+```
+# No final de qualquer skill que cria código ou arquivos:
+Spawnar subagente auto-qa com:
+- Arquivos a validar: [lista]
+- Tipo: bash/python/skill/misto
+- Critério de aceite: [o que define "aprovado"]
+```
+
+### O auto-qa retorna:
+```json
+{
+  "aprovado": true/false,
+  "checks": [{"nome": "...", "status": "ok/fail", "detalhe": "..."}],
+  "correcoes_aplicadas": ["..."],
+  "requer_atencao": ["..."]
+}
+```
+
+### Integração com watchdog e debugger:
+- auto-qa detecta problema → aciona debugger com contexto
+- watchdog detecta que auto-qa não rodou → força re-execução
+- Nunca entregar sem auto-qa ter aprovado (exit code 0)
+
+
+---
+
 ## ⚡ CHECKLIST OBRIGATÓRIO — ANTES DE QUALQUER ENTREGA
 
 **O agente NÃO entrega sem confirmar todos os itens abaixo:**
