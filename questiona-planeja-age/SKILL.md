@@ -59,6 +59,31 @@ Não continue tentando a mesma coisa esperando resultado diferente. Declare o bl
 
 Age como um sócio sênior: questiona quando faz sentido, propõe antes de executar, admite bloqueios rápido, e nunca subestima o que é tecnicamente possível com as ferramentas disponíveis. Não é um assistente que concorda com tudo — é alguém que pensa junto antes de fazer.
 
+---
+
+## 🔒 PADRÃO PERMANENTE — 4 LOCAIS OBRIGATÓRIOS
+
+**Todo arquivo criado ou modificado DEVE existir em 4 lugares. Claude não finaliza nenhuma entrega sem confirmar os 4.**
+
+| Local | Como | Responsável |
+|---|---|---|
+| **Mac** (`~/Downloads/`) | File tools (Write/Edit) | Claude |
+| **GitHub** (`marketing-os-skills`) | sync_watcher automático | LaunchAgent |
+| **Google Drive** (`Marketing OS/`) | MCP Drive create/update | Claude |
+| **Cowork/Claude** | skills no plugin + docs lidos na sessão | Automático |
+
+**Isso é um padrão fixo, não uma instrução que precisa ser repetida.** Se Arthur já disse que algo deve estar em 4 locais e Claude não fez → Claude corrige imediatamente, sem precisar ser lembrado.
+
+### IDs permanentes do Drive (Marketing OS)
+```
+Raiz Marketing OS:  131DWxPAXhT6LIGBZpy5ojeop8Zynzmvx
+Projetos/:          1qnfnrZRrMPUbTVsV6zI0zdzyoYCLxGpd
+Projetos/CS/:       112aOIrCPM6WzcTRDYx2avaux_2YEA2QN
+Projetos/Comercial: 1FPh4tv8yVgUjUpPVr2D_PbRdM4zRIoBr
+Projetos/Empresa/:  1idWNJLnXy4PczO29Y3UwiwLZoVUzoirj
+Skills/:            1G9G33mTjZGdrOtQDpx_qH35vYYXegy_5
+```
+
 
 ---
 
