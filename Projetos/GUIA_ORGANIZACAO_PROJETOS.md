@@ -1,8 +1,18 @@
 # GUIA DE ORGANIZAÇÃO DE PROJETOS — Marketing OS
-**Versão:** 1.0 | **Síntese de 9 respostas Claude** | **Data:** 2026-07-06
+**Versão:** 1.1 | **Síntese de 9 respostas Claude (+ consolidação 2026-07-10)** | **Data:** 2026-07-06 (rev. 2026-07-10)
 **Autor:** Arthur Gerber | **Owner:** Marketing OS
 
 > Este guia é a fonte única de verdade sobre como organizar projetos, conversas, documentos e ferramentas no Marketing OS. Toda nova sessão deve ler este arquivo antes de criar qualquer coisa.
+
+---
+
+## PRINCÍPIOS (valem para 1, 3, 5, 10 projetos — qualquer número)
+
+1. **Claude executa. GitHub/GitLab guardam.** Conversa é descartável. Documento é permanente.
+2. **1 projeto = 1 documento canônico.** Nunca cópias paralelas. Se existe, atualiza. Nunca cria outro.
+3. **Antes de criar qualquer doc → consultar o `INDICE_PROJETOS.md`.** Se o tema já tem dono, editar em vez de criar.
+4. **Conversa nova = lê o contexto do projeto antes de começar.** Nada de reexplicar do zero.
+5. **Fonte de verdade única por tipo:** GitHub/GitLab = código, arquitetura, skills e agentes. Drive = só arquivos/materiais de negócio a compartilhar.
 
 ---
 
@@ -66,6 +76,24 @@ Mesma taxonomia sempre; você só **colapsa ou desmembra**. Comece pequeno e exp
 - Eixo **Negócio**: Comercial, CS, Marketing, OPS/Empresa
 - Eixo **Técnico**: IA/Infra/Skills, Mídia, DevStack
 - Eixo **Produto/Conhecimento**: Conteúdo & Ensino, Empresa Automatizada, Mentor/Conhecimento
+
+---
+
+## 1C. ESTRUTURA INTERNA DE CADA PROJETO (padrão de arquivos)
+
+Cada projeto pode seguir este padrão de 4 itens — do mais lido ao entregável:
+
+```
+[PROJETO]/
+├── MEMORIA.md            ← O que Claude lê primeiro. Contexto, regras, estado atual.
+├── [DOC]_ARQUITETURA.md  ← Como funciona. Decisões técnicas/negócio. Evolui com o projeto.
+├── STATUS.md             ← Feito | Em andamento | Pendente. Atualizado a cada sessão.
+└── docs/                 ← Entregáveis: PDFs, planilhas, scripts, specs. Nunca fonte de verdade.
+```
+
+**Convenção de nome:** `[PROJETO]_[TIPO]_[TEMA].md` (ex.: `COMERCIAL_playbook_abordagem-objecao.md`). Nome igual + pasta igual = mesmo arquivo versionado. Nunca `_v2`, nunca `_final`.
+
+**1 conversa Claude fixa por projeto** (com o nome exato do projeto) — evita espalhar contexto. Ex.: "Comercial — FUP & Closers", "Análise de Calls & Vídeos", "IA & Infra — Skills & Arquitetura".
 
 ---
 
@@ -164,6 +192,18 @@ Atualizar doc existente, nunca criar paralelo.
 
 ---
 
+**Bloco recomendado "O que nunca perguntar"** no CLAUDE.md de cada projeto (evita reexplicar o óbvio a cada sessão):
+
+```
+## O que nunca perguntar
+- Quem são os grupos (VR, Silva, Lazari)
+- O que é FUP
+- Como funciona o atualizar_skill.sh
+- [adicionar o que for específico do projeto]
+```
+
+---
+
 ## 6. COMO RESOLVER AS 9 CONVERSAS ABERTAS AGORA
 
 Mande para cada uma:
@@ -228,6 +268,17 @@ Skills/:             1G9G33mTjZGdrOtQDpx_qH35vYYXegy_5
 
 ---
 
+## O QUE NÃO FAZER (erros comuns)
+
+- ❌ Usar conversas como repositório de decisões (conversa é descartável)
+- ❌ Criar doc novo sem checar o `INDICE_PROJETOS.md`
+- ❌ Espalhar o mesmo doc sem fonte única — a fonte é o canônico em **Local + GitHub + GitLab**
+- ❌ Nomear arquivos com `_v2`, `_final`, `_novo`, `_atualizado`
+- ❌ Abrir conversa sem declarar o projeto
+- ❌ Pedir ao Claude para "votar" na estrutura — estrutura se decide uma vez, não por N respostas
+
+---
+
 ## 10. O QUE AS 9 RESPOSTAS CONCORDARAM (síntese final)
 
 Todas as 9 respostas, independente do contexto de cada conversa, chegaram às mesmas 4 conclusões:
@@ -239,4 +290,4 @@ Todas as 9 respostas, independente do contexto de cada conversa, chegaram às me
 
 ---
 
-*Gerado em: 2026-07-06 | Fonte: síntese de 9 respostas Claude | Marketing OS*
+*Gerado em: 2026-07-06 · Revisado/consolidado em 2026-07-10 (incorporada a versão avulsa da raiz + padronização 3 lugares) | Marketing OS*
