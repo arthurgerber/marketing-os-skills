@@ -34,6 +34,41 @@ Nunca criar projeto sem antes registrar no INDICE_PROJETOS.md. O índice é o ro
 
 ---
 
+## 1B. ESBOÇO ESCALÁVEL — quantos projetos criar (1 → 10)
+
+Mesma taxonomia sempre; você só **colapsa ou desmembra**. Comece pequeno e expanda quando um tema ficar grande demais pra ser um *documento* dentro de outro projeto. Cada nível abaixo é a divisão recomendada para aquela quantidade.
+
+### 1 projeto (começando)
+`Marketing OS` — tudo dentro, subdividido por documentos. Doc-mãe: `MARKETING_OS_ARQUITETURA.md`.
+
+### 3 projetos (visão macro)
+1. **Negócio** (Comercial + CS + OPS/Gestão)
+2. **Marketing & Conteúdo**
+3. **IA / Infra / Skills & Agentes**
+
+### 5 projetos (RECOMENDADO — o núcleo, já é o da seção 1)
+1. Comercial · 2. CS · 3. Marketing · 4. Empresa Hub / OPS · 5. IA / Infra / Skills
+
+### 7 projetos (operação madura — desmembra o técnico)
+6. **Análise de Calls & Mídia** → `Projetos/Midia/ANALISE_CALLS.md` (skill analisa-video, transcrições, scores)
+7. **Automação & DevStack** → `Projetos/Dev/DEVSTACK.md` (scripts, APIs, bots, pipelines, integrações)
+
+### 8 projetos (entra o produto de conteúdo)
+8. **Base de Conteúdo & Ensino de IA** → `Projetos/Conteudo/BASE_CONTEUDO_IA.md` (curadoria de reels/hooks/copys, biblioteca)
+
+### 10 projetos (portfólio completo)
+9. **Empresa Automatizada (produto)** → `Projetos/Empresa/AGENTES_EMPRESA.md` (agentes de copy/tráfego/funil como produto vendável)
+10. **Conhecimento & Mentor** → `Projetos/Conhecimento/INDICE_CONHECIMENTO.md` (bases de eventos/G4, frameworks, liderança/desenvolvimento)
+
+> **Regra de desmembramento:** um sub-tema nasce como `.md` dentro do projeto-pai. Só vira projeto próprio quando (a) tem doc canônico grande demais, ou (b) vira produto/plataforma com roadmap. Ex.: "WhatsApp near-real-time" começa dentro do CS; vira projeto quando for pro PoC.
+
+**Diversificação por eixo** (pra não concentrar tudo em "operação"):
+- Eixo **Negócio**: Comercial, CS, Marketing, OPS/Empresa
+- Eixo **Técnico**: IA/Infra/Skills, Mídia, DevStack
+- Eixo **Produto/Conhecimento**: Conteúdo & Ensino, Empresa Automatizada, Mentor/Conhecimento
+
+---
+
 ## 2. REGRA ANTI-DUPLICAÇÃO (o problema real das 9 conversas)
 
 ### Por que os documentos duplicam?
