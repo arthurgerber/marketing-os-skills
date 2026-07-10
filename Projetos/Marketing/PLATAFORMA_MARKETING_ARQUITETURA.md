@@ -2,7 +2,7 @@
 
 **Projeto:** Marketing | **Status:** 🟢 Em desenvolvimento | **Atualizado:** 2026-07-10
 **Doc canônico do Projeto Marketing** — registrado no `INDICE_PROJETOS.md`
-**Segue:** `POLITICA_SYNC_SEGURANCA.md` (3+ lugares idênticos, verificação pós-escrita, snapshot antes de sobrescrever, redundância GitHub+GitLab, ações destrutivas sinalizadas).
+**Segue:** `POLITICA_SYNC_SEGURANCA.md` (3 lugares idênticos — Local + GitHub + GitLab —, verificação pós-escrita, snapshot antes de sobrescrever, ações destrutivas sinalizadas).
 
 ---
 
@@ -110,7 +110,7 @@ Tudo que é criação e engenharia de mensagem de marketing dos grupos (VR / Sil
 ### Regras herdadas (de POLITICA_SYNC_SEGURANCA.md)
 
 - Nada é publicado/enviado sem aprovação de Arthur (item 6 da política — ações destrutivas/irreversíveis são sinalizadas, nunca automáticas).
-- Todo agente/subagente nasce salvando nos 3+ lugares (Local + GitHub + GitLab + Drive) com verificação pós-escrita.
+- Todo agente/subagente nasce salvando nos 3 lugares (Local + GitHub + GitLab) com verificação pós-escrita.
 - Novo agente que consome recurso: Arthur aprova antes de criar.
 - Isolamento de dados por cliente/empresa; aprendizado compartilhado só por padrão anonimizado.
 
@@ -165,9 +165,9 @@ Projeto: Marketing.
 
 ---
 
-## SINCRONIZAÇÃO (local + GitHub + GitLab + Drive)
+## SINCRONIZAÇÃO (local + GitHub + GitLab)
 
-Padrão do Marketing OS: cada doc vive nos 4 lugares, sincronizado por terminal/Cowork, com bytes idênticos.
+Padrão do Marketing OS: cada doc vive nos 3 lugares (Local + GitHub + GitLab), sincronizado por terminal/Cowork, com bytes idênticos.
 Comandos de referência (rodar no Mac, na raiz do repo — aqui `~/Downloads/Marketing_OS/github_skills`):
 
 ```bash
@@ -182,5 +182,5 @@ git commit -m "feat(marketing): arquitetura + agentes + framework análise de co
 git push origin HEAD
 git push gitlab HEAD
 
-# 3. Drive → via conector do Claude (conteúdo COMPLETO, nunca stub) em "Marketing OS/Projetos/Marketing/"
+# (Drive não é mais alvo de sync de docs — fica para arquivos/vídeos. Leitura web dos canônicos: GitHub/GitLab.)
 ```

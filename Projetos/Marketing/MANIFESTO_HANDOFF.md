@@ -1,4 +1,6 @@
 # MANIFESTO DE HANDOFF — Marketing OS
+
+> **ATUALIZAÇÃO 2026-07-10:** O Drive foi **descontinuado como alvo de sync de docs**. A redundância agora é **Local + GitHub + GitLab** (2 remotes versionados). O Drive permanece só para **arquivos** (vídeos, gravações, planilhas, materiais a compartilhar). As seções abaixo sobre estado/stubs do Drive ficam como **registro histórico**.
 **Gerado:** 2026-07-08 · **Origem:** sessão de auditoria (chat web)
 **Para:** a próxima conversa (Cowork / Claude Code) que vai auditar + sincronizar.
 

@@ -26,8 +26,8 @@ Regra simples — cada novo projeto segue este padrão:
 1. Criar pasta:    ~/Downloads/Projetos/[NOME]/
 2. Criar doc:      ~/Downloads/Projetos/[NOME]/PROJETO_[NOME]_ARQUITETURA.md
 3. Registrar:      Adicionar entrada no INDICE_PROJETOS.md
-4. Drive:          Criar pasta Marketing OS/Projetos/[NOME]/ no Drive
-5. GitHub:         sync_watcher sincroniza automaticamente
+4. GitHub:         commit + push origin (marketing-os-skills)
+5. GitLab:         push gitlab (mirror de redundância)
 ```
 
 Nunca criar projeto sem antes registrar no INDICE_PROJETOS.md. O índice é o roteador de tudo.
@@ -108,13 +108,13 @@ Exemplos:
 
 | O quê | Onde vive | Por quê |
 |---|---|---|
-| Documentos de arquitetura | **GitHub** (marketing-os-skills) | Versionado, histórico, merge |
+| Documentos de arquitetura | **GitHub + GitLab** (marketing-os-skills) | Versionado, histórico, redundância |
 | Skills | **GitHub** + plugin Cowork | Auto-sync via LaunchAgent |
 | Docs de negócio (compartilhar) | **Drive** Marketing OS/ | Colaborativo, fácil de acessar |
 | Mac local | **~/Downloads/Projetos/** | Fonte para sync automático |
 | Contexto de sessão | **Claude** (lê dos docs acima) | Executor, não repositório |
 
-**Regra de ouro:** Claude executa. GitHub/Drive guardam. Conversa é descartável. Doc é permanente.
+**Regra de ouro:** Claude executa. GitHub/GitLab guardam (Drive só para arquivos a compartilhar). Conversa é descartável. Doc é permanente.
 
 ---
 
@@ -192,8 +192,8 @@ DURANTE A SESSÃO
 FECHA SESSÃO
   └── Doc canônico atualizado ✅
   └── INDICE_PROJETOS.md atualizado ✅
-  └── GitHub: sync_watcher faz push automático ✅
-  └── Drive: Claude atualiza via MCP ✅
+  └── GitHub: commit + push origin ✅
+  └── GitLab: push gitlab (redundância) ✅
 ```
 
 ---
@@ -233,7 +233,7 @@ Skills/:             1G9G33mTjZGdrOtQDpx_qH35vYYXegy_5
 Todas as 9 respostas, independente do contexto de cada conversa, chegaram às mesmas 4 conclusões:
 
 1. **Conversa = executor. Doc = memória.** A conversa é descartável. O documento é permanente.
-2. **Uma fonte de verdade por projeto.** GitHub para código/docs técnicos. Drive para docs de negócio. Nunca os dois como fonte primária.
+2. **Uma fonte de verdade por projeto.** GitHub/GitLab para código, arquitetura, skills e agentes (versionado). Drive só para arquivos/planilhas de negócio a compartilhar. Nunca dois como fonte primária do mesmo doc.
 3. **INDICE_PROJETOS.md como roteador.** Toda sessão começa lendo o índice. Toda sessão termina atualizando o doc canônico.
 4. **Regra anti-duplicação na origem.** Antes de criar → checar. Se existe → atualizar. Nunca criar paralelo.
 

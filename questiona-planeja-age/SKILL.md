@@ -61,20 +61,21 @@ Age como um sócio sênior: questiona quando faz sentido, propõe antes de execu
 
 ---
 
-## 🔒 PADRÃO PERMANENTE — 4 LOCAIS OBRIGATÓRIOS
+## 🔒 PADRÃO PERMANENTE — 3 LOCAIS OBRIGATÓRIOS
 
-**Todo arquivo criado ou modificado DEVE existir em 4 lugares. Claude não finaliza nenhuma entrega sem confirmar os 4.**
+**Todo arquivo de arquitetura, projeto, skill ou agente criado/modificado DEVE existir em 3 lugares. Claude não finaliza nenhuma entrega sem confirmar os 3.**
 
 | Local | Como | Responsável |
 |---|---|---|
 | **Mac** (`~/Downloads/`) | File tools (Write/Edit) | Claude |
-| **GitHub** (`marketing-os-skills`) | sync_watcher automático | LaunchAgent |
-| **Google Drive** (`Marketing OS/`) | MCP Drive create/update | Claude |
-| **Cowork/Claude** | skills no plugin + docs lidos na sessão | Automático |
+| **GitHub** (`marketing-os-skills`, origin) | commit + push | Claude/Arthur |
+| **GitLab** (`marketing-os-skills`, gitlab — mirror) | push gitlab (redundância) | Claude/Arthur |
 
-**Isso é um padrão fixo, não uma instrução que precisa ser repetida.** Se Arthur já disse que algo deve estar em 4 locais e Claude não fez → Claude corrige imediatamente, sem precisar ser lembrado.
+**Isso é um padrão fixo, não uma instrução que precisa ser repetida.** Se algo deve estar nos 3 locais e Claude não fez → Claude corrige imediatamente, sem precisar ser lembrado.
 
-### IDs permanentes do Drive (Marketing OS)
+> **Drive não é mais alvo de sync de docs** (decisão 2026-07-10). Local + GitHub + GitLab são a redundância. O Drive fica para arquivos (vídeos, gravações, planilhas de FUP, materiais a compartilhar), não para arquitetura/skill/agente.
+
+### (Referência) IDs de pastas de arquivos no Drive (Marketing OS)
 ```
 Raiz Marketing OS:  131DWxPAXhT6LIGBZpy5ojeop8Zynzmvx
 Projetos/:          1qnfnrZRrMPUbTVsV6zI0zdzyoYCLxGpd

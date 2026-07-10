@@ -1,5 +1,5 @@
 # POLÍTICA CANÔNICA — Sincronização, Segurança e Redundância
-**Marketing OS · v2.0 · 2026-07-08**
+**Marketing OS · v2.2 · 2026-07-10**
 **Escopo:** OBRIGATÓRIA para TUDO — skills (atuais e futuras), agentes/sub-agentes (atuais e futuros), arquiteturas de projeto (atuais e futuras) e todo código/doc canônico.
 
 > Toda skill, agente ou projeto novo DEVE referenciar e herdar esta política. Qualquer criação/edição de arquivo canônico segue estas regras. Quem cria um projeto/skill/agente sem apontar para cá está fora do padrão.
@@ -11,9 +11,10 @@ Todo arquivo canônico (arquitetura, código `.sh`/`.py`, skill, framework, índ
 1. **Local** (`~/Downloads/Projetos/...`) — cópia de trabalho.
 2. **GitHub** (`github.com/arthurgerber/marketing-os-skills`) — versionado (backup primário).
 3. **GitLab** (mirror privado — segundo remote) — redundância caso o GitHub falhe. Remote `gitlab` → `https://gitlab.com/arthur.ga94-group/marketing-os-skills.git` (JÁ CONFIGURADO em 2026-07-09).
-4. **Drive** (`Marketing OS/Projetos/...`) — **conveniência de leitura no navegador**, com **conteúdo completo** (nunca stub/ponteiro).
 
-Regra de bytes: os 4 devem bater. Nenhum arquivo no Drive/remotes pode ter menos conteúdo que a versão canônica.
+Regra de bytes: os 3 devem bater. Nenhum arquivo nos remotes pode ter menos conteúdo que a versão canônica.
+
+> **Drive não é mais alvo de sync de docs** (decisão 2026-07-10): serve para arquivos/vídeos/planilhas a compartilhar. A leitura dos canônicos no navegador é via GitHub/GitLab, que renderizam Markdown.
 
 ## 2. NUNCA DUPLICAR
 Se o arquivo existe, **atualize/mova** — jamais crie versão paralela (`_v2`, `_final`, `copia`). Antes de criar, cheque o `INDICE_PROJETOS.md`.
